@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أذكار الصباح والمساء</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff5f8;--card:#ffffff;--ink:#3b2748;--mute:#7d6a8a;--acc:#b4478f;--accsoft:#f9e1ef;--gold:#e3a53a;--line:#f1cfe0;--hd1:#b4478f;--hd2:#7b4bb3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#221826;--card:#2e2133;--ink:#f7ecf4;--mute:#c1adc9;--acc:#f08cc8;--accsoft:#43294a;--gold:#f0c24a;--line:#4a3552;--hd1:#8f2f70;--hd2:#5a3590}}
+:root[data-theme="dark"]{--bg:#221826;--card:#2e2133;--ink:#f7ecf4;--mute:#c1adc9;--acc:#f08cc8;--accsoft:#43294a;--gold:#f0c24a;--line:#4a3552;--hd1:#8f2f70;--hd2:#5a3590}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Amiri","Geeza Pro","Noto Naskh Arabic",Tahoma,serif;line-height:1.9}
+.wrap{max-width:560px;margin:0 auto;padding:12px 14px 60px}
+.hero{background:linear-gradient(135deg,var(--hd1),var(--hd2));color:#fff;border-radius:24px;padding:18px 14px 14px;text-align:center;margin-bottom:14px;box-shadow:0 6px 18px rgba(123,75,179,.25)}
+.bis{font-size:20px;opacity:.95;margin:0}
+h1{font-size:30px;margin:2px 0 4px}
+.sub{margin:0 0 8px;opacity:.9;font-size:17px}
+.chips{display:flex;flex-direction:column;gap:2px;font-size:18px;font-weight:700}
+.chips span{background:rgba(255,255,255,.18);border-radius:12px;padding:0 10px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab{flex:1;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:20px;padding:8px;border-radius:999px;cursor:pointer}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+.prog{height:14px;background:var(--accsoft);border-radius:999px;overflow:hidden}
+.bar{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--acc));border-radius:999px;transition:width .3s}
+.ptxt{text-align:center;color:var(--mute);font-size:16px;margin:4px 0 12px}
+.card{background:var(--card);border:2px solid var(--line);border-right:8px solid var(--acc);border-radius:20px;padding:14px;margin-bottom:12px}
+.card.done{border-color:var(--gold);background:var(--accsoft)}
+.n{display:inline-block;background:var(--acc);color:#fff;border-radius:50%;width:28px;height:28px;text-align:center;line-height:28px;font-size:16px;font-weight:700}
+.card.done .n{background:var(--gold);color:#222}
+.t{font-size:24px;line-height:2.1;margin:8px 0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rep{color:var(--mute);font-size:17px}
+.btn{border:0;background:var(--acc);color:#fff;font:inherit;font-size:20px;min-width:96px;padding:8px 16px;border-radius:999px;cursor:pointer}
+.card.done .btn{background:var(--gold);color:#222}
+.win{display:none;text-align:center;background:var(--accsoft);border:2px solid var(--acc);border-radius:20px;padding:16px;margin-top:8px;font-size:22px}
+.win.show{display:block}
+.reset{display:block;margin:16px auto 0;background:none;border:2px solid var(--line);color:var(--mute);font:inherit;font-size:16px;padding:6px 16px;border-radius:999px;cursor:pointer}
+.dua{text-align:center;background:var(--card);border:2px solid var(--gold);border-radius:20px;padding:14px;margin-top:18px;font-size:22px;line-height:2}
+.ded{margin-top:22px;border-radius:24px;padding:18px 16px;text-align:center;color:#fff;background:linear-gradient(160deg,var(--hd1),var(--hd2));box-shadow:0 6px 18px rgba(123,75,179,.25)}
+.ded h2{margin:0 0 6px;font-size:26px}
+.ded p{margin:8px 0;font-size:21px;line-height:2.05}
+.ded .am{font-size:23px;font-weight:700}
+.ded .by{margin-top:12px;background:rgba(255,255,255,.2);border-radius:14px;padding:4px 10px;font-size:21px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<p class="bis">بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+<h1>أذكار الصباح والمساء</h1>
+<p class="sub">اضغطي على الزر كل مرة تقولين الذكر</p>
+<div class="chips"><span>إعداد الطالبة: رتيل سعود الحربي</span><span>بإشراف المعلمة: أ / أحلام الحربي</span></div>
+</div>
+<div class="tabs">
+<button class="tab" id="tm">☀️ الصباح</button>
+<button class="tab" id="te">🌙 المساء</button>
+</div>
+<div class="prog"><div class="bar" id="bar"></div></div>
+<div class="ptxt" id="ptxt"></div>
+<div id="list"></div>
+<div class="win" id="win">🌟 ما شاء الله! أتممتِ أذكارك 🌟<br>تقبّل الله منكِ</div>
+<button class="reset" id="reset">إعادة من البداية</button>
+<div class="dua">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ<br>اللَّهُمَّ اغْفِرْ لِي وَلِمُعَلِّمَتِي أ / أَحْلَامِ الحربي، وَبَارِكْ لَهَا فِي عِلْمِهَا وَعُمُرِهَا، وَاجْزِهَا عَنَّا خَيْرَ الجَزَاءِ<br>سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ<br>وَصَلَّى اللهُ وَسَلَّمَ عَلَى نَبِيِّنَا مُحَمَّدٍ</div>
+<div class="ded">
+<h2>🤍 إهداء ثواب الأدعية 🤍</h2>
+<p>كل من قرأ هذه الأدعية، أرجو أن يجعل ثوابها لي، ولوالديّ، ولمعلمتي الغالية أ/ أحلام الحربي، وللمسلمين والمسلمات أجمعين.</p>
+<p>اللهم اجعلها في ميزان حسناتهم، واغفر لهم وارحمهم، وبارك لهم في أعمارهم وأعمالهم، وارزقهم سعادة الدارين، واكتب لهم الأجر والثواب، واجعل لهم من كل همّ فرجًا، ومن كل ضيق مخرجًا، ومن كل دعاء نصيبًا، وارزقهم الفردوس الأعلى من الجنة بغير حساب ولا سابق عذاب.</p>
+<p class="am">اللهم آمين يا رب العالمين 🤲🏻🌷</p>
+<div class="by">إعداد: رتيل سعود الحربي 💗</div>
+</div>
+</div>
+<script>
+var Z=[
+{t:"أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ\nاللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",c:1,n:"آية الكرسي"},
+{t:"بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",c:3,n:"سورة الإخلاص"},
+{t:"بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِن شَرِّ مَا خَلَقَ ۝ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",c:3,n:"سورة الفلق"},
+{t:"بِسْمِ اللهِ الرَّحْمَٰنِ الرَّحِيمِ\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ",c:3,n:"سورة الناس"},
+{m:"اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ",e:"اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ",c:1},
+{t:"بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",c:3},
+{t:"رَضِيتُ بِاللهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا",c:3},
+{t:"حَسْبِيَ اللهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",c:7},
+{t:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَٰهَ إِلَّا أَنْتَ",c:3},
+{e:"أَعُوذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",c:3},
+{t:"لَا إِلَٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",c:10},
+{t:"سُبْحَانَ اللهِ وَبِحَمْدِهِ",c:100}
+];
+var mode="m",cnt={m:{},e:{}};
+var $=function(i){return document.getElementById(i)};
+function items(){return Z.map(function(x,i){return{i:i,t:x.t||(mode=="m"?x.m:x.e),c:x.c,n:x.n,ok:x.t||(mode=="m"?x.m:x.e)}}).filter(function(x){return x.ok})}
+function render(){
+var L=items(),h="",done=0;
+L.forEach(function(x,k){
+var v=cnt[mode][x.i]||0,d=v>=x.c;if(d)done++;
+h+='<div class="card'+(d?' done':'')+'"><span class="n">'+(k+1)+'</span> <b>'+(x.n||'')+'</b><div class="t">'+x.t.replace(/\n/g,'<br>')+'</div><div class="row"><span class="rep">'+(x.c==1?'مرة واحدة':'التكرار: '+x.c)+'</span><button class="btn" data-i="'+x.i+'">'+(d?'✓ تم':v+' / '+x.c)+'</button></div></div>';
+});
+$("list").innerHTML=h;
+$("bar").style.width=(done/L.length*100)+"%";
+$("ptxt").textContent="أنجزتِ "+done+" من "+L.length;
+$("win").className="win"+(done==L.length?" show":"");
+$("tm").className="tab"+(mode=="m"?" on":"");
+$("te").className="tab"+(mode=="e"?" on":"");
+}
+$("list").onclick=function(e){
+var b=e.target.closest(".btn");if(!b)return;
+var i=+b.getAttribute("data-i"),c=Z[i].c;
+cnt[mode][i]=Math.min(c,(cnt[mode][i]||0)+1);
+render();
+};
+$("tm").onclick=function(){mode="m";render()};
+$("te").onclick=function(){mode="e";render()};
+$("reset").onclick=function(){cnt[mode]={};render()};
+mode=(new Date().getHours()>=15)?"e":"m";
+render();
+</script>
+</body>
+</html>
